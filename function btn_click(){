@@ -1,0 +1,16 @@
+function btn_click(){
+	//document.getElementById('caixa').innerHTML = 'Este é o texto alterado.';
+
+	//ajax
+	//criamos o objeto request
+	let pedido = new XMLHttpRequest();
+	//definir a função que vai atuar mediante a pesposta
+	pedido.onreadystatechange = function(){
+		document.getElementById('caixa').innerHTML = this.responseText;
+	}
+	//abri o arquivo
+	pedido.open("GET", "dados.txt", true);
+	//envia o pedido
+	pedido.send();
+
+}
